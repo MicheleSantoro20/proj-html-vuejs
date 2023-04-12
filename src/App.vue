@@ -1,5 +1,5 @@
 <script >
-import HelloWorld from './components/HelloWorld.vue'
+import VueHeader from './components/VueHeader.vue'
 
   export default {
       components: {
@@ -9,9 +9,10 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-
+<VueHeader />
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use "./styles/general.scss";
+
 </style>
