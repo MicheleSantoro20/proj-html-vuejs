@@ -131,6 +131,7 @@ li {
     padding: 30px 5% ;
     align-items: center;
     color: #555555;
+    font-size: 19px;
 }
 
 .logo {
@@ -171,5 +172,6 @@ li {
     background-color: #273044;
     gap: 40px;
     margin-bottom: 25px;
+    font-size: 20px;
 }
 </style>
