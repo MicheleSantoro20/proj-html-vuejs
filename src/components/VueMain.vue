@@ -13,8 +13,18 @@ import VueButton from './VueButton.vue';
             return {
                 store,
                 Slides: {
-                    Read: "READ MORE"
+                    Read: "READ MORE",
+                    Show: "SHOW ALL",
+                    Teach: "START TEACHING",
+                    Business: "DOING BUSINESS"
                 }
+            }
+        },
+        methods: {
+            cardSplice() {
+                let splicedArray = this.store.cardArray2.splice(0, 6);
+                return splicedArray;
+
             }
         }
         
@@ -63,6 +73,67 @@ import VueButton from './VueButton.vue';
             <div class="card-container mg">
                 <VueCard v-for="(element, o) in this.store.cardArray2" :image="element.imagePath" :category="element.category" :name="element.name" :rating="element.rating" :oldPrice="element.oldPrice" :newPrice="element.newPrice" :key="o"/>
             </div>
+            <VueButton class="show-all-button" :Show="Slides.Show"/>
+        </section>
+
+        <section>
+            <div class="newsLetter">
+                <div class="newsletter-section">
+                    <h2>Subscribe our newsletter</h2>
+                    <h3>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</h3>
+                </div>
+                <div class="newsletter-section">
+                    <label for="mail">YOUR E-MAIL ADDRESS</label>
+                    <div>
+                        <input type="email" id="mail" placeholder="Enter your E-mail">
+                        <button class="subscribe-button">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-lightgray">
+            <h1 class="popular-courses-title">Popular Courses</h1>
+            <h4 class="popular-courses-subtitle">Discover our most popular courses for self learning</h4>
+            <div class="card-container mg">
+                <VueCard v-for="(element, o) in this.store.cardArray3" :image="element.imagePath" :category="element.category" :name="element.name" :rating="element.rating" :oldPrice="element.oldPrice" :newPrice="element.newPrice" :key="o"/>
+            </div>
+            <div class="btn-wrapper">
+                <button class="btn-prev-next"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn-prev-next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section>
+            <div class="work-with-us mg">
+                <div class="work-with-us-sections">
+                    <img class="work-with-us-img" src="../assets/image_box_1-221x231.png" alt="">
+                    <div>
+                        <h2 class="work-with-us-title">Become An instructor</h2>
+                        <h4 class="work-with-us-description">Teach what you love. Masterstudy gives you <br/> the tools to create a course.</h4>
+                        <VueButton class="work-with-us-button" :Teach="Slides.Teach"/>
+                    </div>
+                </div>
+                <div class="work-with-us-sections">
+                    <img class="work-with-us-img" src="../assets/image_box_2-234x231.png" alt="">
+                    <div>
+                        <h2 class="work-with-us-title">Access For Business</h2>
+                        <h4 class="work-with-us-description">Get unlimited access to 2,500 of top courses <br/> for your team.</h4>
+                        <VueButton class="work-with-us-button" :Business="Slides.Business"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="testimonial">
+                <div class="testimonial-container">
+                    <h2 class="testimonial-title">Investing for Your Future</h2>
+                    <div class="testimonial-description">lt is no exaggeration to sayt is MasterStudy experience was transformative-both professionally and personally. This workshop will long remain a high point of my life. Thanks again.,.. I am feeling energized and eager to start teaching my class next week. I cant wait to use all of my new teaching tools. I will absolutely recommend this workshop to Other educators! </div>
+                    <h4 class="testimonial-name">Linda Green</h4>
+                    <div class="testimonial-job">Product Manager, Apple Inc</div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -107,7 +178,8 @@ clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 550%);
 .card-container {
     color: var(--BlueGray);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 32px;
     flex-wrap: wrap;
 }
 .Learning {
@@ -129,7 +201,7 @@ clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 550%);
     color: var(--BlueGray);
     margin: 10px 0px 50px 0px;
 }
-.recent-courses-title {
+.recent-courses-title{
     font-size: 70px;
     color: var(--BlueGray);
     margin: 50px;
@@ -146,8 +218,135 @@ clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 550%);
     font-size: 25px;
     padding: 10px 20px;
     border-radius: 50px;
+    transition: all 0.3s ease-in-out;
     &:hover {
         background-color: #f0f4fa;
+        cursor: pointer;
     }
+}
+.show-all-button {
+    margin-top: 50px;
+    margin-left: 50%;
+    margin-bottom: 200px;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.newsLetter {
+    background-color: var(--buttonColor);
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.newsletter-section {
+    max-width: 900px;
+    color: white;
+}
+.newsletter-section h2 {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+#mail {
+    margin-top: 20px;
+    padding: 18px 12px;
+    width: 400px;
+    font-size: 16px;
+    border: none;
+}
+.subscribe-button {
+    padding: 18px 25px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: #457992;
+    cursor: pointer;
+}
+.popular-courses-title {
+    font-size: 70px;
+    color: var(--BlueGray);
+    padding: 50px;
+    text-align: center;
+}
+.popular-courses-subtitle {
+    margin-bottom: 30px;
+    font-size: 25px;
+    color: var(--BlueGray);
+    text-align: center;
+}
+.bg-lightgray {
+    background-color: #f0f4fa;
+}
+
+.btn-prev-next {
+    padding: 20px 25px;
+    background-color: white;
+    color: lightgrey;
+    border: 1px solid lightgray;
+    font-size: 20px;
+    margin-bottom: 70px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: #457992;
+        color: white;
+        border: 1px solid #457992;
+        cursor: pointer;
+    }
+}
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.work-with-us {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 100px 5%;
+}
+.work-with-us-sections {
+    display: flex;
+    border: 1px solid lightgray;
+    padding: 75px 50px;
+    width: 50%;
+}
+.work-with-us-title, .testimonial-title {
+    font-size: 50px;
+    margin: 20px;
+    color: var(--BlueGray);
+}
+.work-with-us-description, .testimonial-description {
+    font-size: 25px;
+    margin: 20px;
+    color: var(--BlueGray);
+}
+.work-with-us-button {
+    margin: 20px;
+}
+.work-with-us-img  {
+    width: 300px;
+}
+
+.testimonial{
+    background-image: url(../assets/testimonial-1-1917x640-1-1914x639.jpg);
+    background-size:cover;
+    height: 800px;
+    padding-top: 100px;
+}
+.testimonial-container {
+    background-color: white;
+    height: 600px;
+    width: 800px;
+    padding: 75px 100px;
+    margin-left: 550px;
+}
+.testimonial-name {
+    font-size: 23px;
+    margin: 20px 0px 0px 20px;
+}
+.testimonial-job {
+    font-size: 18px;
+    margin-left: 20px;
 }
 </style>

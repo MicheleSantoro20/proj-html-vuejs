@@ -46,7 +46,7 @@
     height: 400px;
     width: 330px;
     border: 1px solid lightgray;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     transition: transform 0.3s ease-in-out;
     &:hover {
         transform: scale(1.2);

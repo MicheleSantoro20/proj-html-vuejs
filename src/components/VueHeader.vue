@@ -113,7 +113,7 @@
     padding: 20px 5% ;
     color: #afafad;
     border-bottom: 1px solid #afafad;
-    font-size: 13px;
+    font-size: 16px;
 }
 ul {
     display: flex;
@@ -131,7 +131,7 @@ li {
     padding: 30px 5% ;
     align-items: center;
     color: #555555;
-    font-size: 19px;
+    font-size: 21px;
 }
 
 .logo {
@@ -172,6 +172,6 @@ li {
     background-color: #273044;
     gap: 40px;
     margin-bottom: 25px;
-    font-size: 20px;
+    font-size: 25px;
 }
 </style>
