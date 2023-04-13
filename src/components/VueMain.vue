@@ -323,6 +323,9 @@ clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 550%);
 }
 .work-with-us-button {
     margin: 20px;
+    &:hover {
+        background-color: #46c197;
+    }
 }
 .work-with-us-img  {
     width: 300px;
