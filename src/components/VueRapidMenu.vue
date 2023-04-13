@@ -6,11 +6,11 @@
 
 <template>
 <div class="lateralBar">
-    <i class="fa-solid fa-desktop"></i>
-    <i class="fa-solid fa-circle-dot"></i>
-    <i class="fa-solid fa-wrench"></i>
-    <i class="fa-solid fa-cart-shopping"></i>
-    <i class="fa-solid fa-mobile-screen-button"></i>
+    <i class="fa-solid fa-desktop tools"></i>
+    <i class="fa-solid fa-circle-dot tools"></i>
+    <i class="fa-solid fa-wrench tools"></i>
+    <i class="fa-solid fa-cart-shopping tools"></i>
+    <i class="fa-solid fa-mobile-screen-button tools"></i>
 
 </div>
 </template>
@@ -31,5 +31,14 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
+}
+.tools {
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        color: blue;
+        transform: scale(1.2);
+
+    }
 }
 </style>
